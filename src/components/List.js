@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import ListItem from "./ListItem";
+import { DataContext } from "./DataProvider";
 
 const List = () => {
+  const [todo, setTodo] = useContext(DataContext);
   return (
     <ul>
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      {todo.map((todo, index) => (
+        <ListItem todo={todo} key={index} id={index} />
+      ))}
     </ul>
   );
 };

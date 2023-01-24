@@ -1,12 +1,12 @@
 import React from "react";
 
-const ListItem = () => {
+const ListItem = (props) => {
   return (
     <div>
       <li>
-        <label htmlFor=''>
-          <input type='checkbox' id='' />
-          Cooking to do
+        <label htmlFor={props.id}>
+          <input type='checkbox' id={props.id} />
+          {props.todo.name}
         </label>
         <button>Edit</button>
       </li>
