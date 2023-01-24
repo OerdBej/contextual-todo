@@ -1,22 +1,12 @@
 import React from "react";
+import ListItem from "./ListItem";
 
 const List = () => {
   return (
     <ul>
-      <li>
-        <label htmlFor=''>
-          <input type='checkbox' id='' />
-          Cooking to do
-        </label>
-        <button>Edit</button>
-      </li>
-      <li>
-        <label htmlFor=''>
-          <input type='checkbox' id='' />
-          Cooking to do
-        </label>
-        <button disabled>Edit</button>
-      </li>
+      <ListItem />
+      <ListItem />
+      <ListItem />
     </ul>
   );
 };
