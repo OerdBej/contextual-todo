@@ -8,7 +8,7 @@ const InputForm = () => {
 
   const addTodo = (e) => {
     e.preventDefault();
-    setTodo([...todo], { name: todoName, complete: false });
+    setTodo([...todo, { name: todoName, complete: false }]);
   };
 
   return (
@@ -22,7 +22,7 @@ const InputForm = () => {
         value={todoName}
         onChange={(e) => setTodoName(e.target.value.toLocaleLowerCase())}
       />
-      <button type='submit'>Create</button>
+      <button>Create</button>
     </form>
   );
 };

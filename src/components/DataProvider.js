@@ -1,12 +1,14 @@
 import React from "react";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect} from "react";
 
 export const DataContext = createContext();
 
 const DataProvider = (props) => {
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
+
+  
   return (
-    <DataContext.Provider value={[todo, setTodo]}>
+    <DataContext.Provider value={[todos, setTodos]}>
       {props.children}
     </DataContext.Provider>
   );

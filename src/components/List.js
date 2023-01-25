@@ -3,10 +3,10 @@ import ListItem from "./ListItem";
 import { DataContext } from "./DataProvider";
 
 const List = () => {
-  const [todo, setTodo] = useContext(DataContext);
-  return (
+  const [todos, setTodos] = useContext(DataContext);
+   return (
     <ul>
-      {todo.map((todo, index) => (
+      {todos.map((todo, index) => (
         <ListItem todo={todo} key={index} id={index} />
       ))}
     </ul>
