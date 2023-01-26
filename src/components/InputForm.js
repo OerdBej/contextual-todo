@@ -4,11 +4,12 @@ import { useState, useContext } from "react";
 
 const InputForm = () => {
   const [todo, setTodo] = useContext(DataContext);
-  const [todoName, setTodoName] = useState("reading");
+  const [todoName, setTodoName] = useState("");
 
   const addTodo = (e) => {
     e.preventDefault();
     setTodo([...todo, { name: todoName, complete: false }]);
+    setTodoName("");
   };
 
   return (

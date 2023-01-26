@@ -1,1 +1,3 @@
 # Getting Started with Create React App
+
+This project presents a meticulously designed and highly responsive to-do list application, crafted with React and utilizing the advanced functionality of the Context API and useEffect hooks. With this app, users have the ability to effortlessly store, edit, and delete their tasks, as well as search for specific entries with great ease and efficiency. Additionally, the app features a convenient task counter, which allows users to keep a clear and accurate record of their progress. To ensure data persistence and user convenience, the application has been implemented with Local Storage technology.

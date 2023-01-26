@@ -1,14 +1,23 @@
-import React from "react";
-import { useState, createContext, useEffect} from "react";
+import React, { useEffect } from "react";
+import { useState, createContext } from "react";
+import { json } from "react-router-dom";
 
 export const DataContext = createContext();
 
 const DataProvider = (props) => {
-  const [todos, setTodos] = useState([]);
+  const [todo, setTodo] = useState([]);
 
-  
+  useEffect(() => {
+    const todoStore = JSON.parse(localStorage.getItem("todoStore"));
+    if (todoStore) setTodo(todoStore);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todoStore", JSON.stringify(todo));
+  }, [todo]);
+
   return (
-    <DataContext.Provider value={[todos, setTodos]}>
+    <DataContext.Provider value={[todo, setTodo]}>
       {props.children}
     </DataContext.Provider>
   );
