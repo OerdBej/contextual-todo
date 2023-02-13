@@ -16,7 +16,7 @@ const List = () => {
           todo={todo}
           key={index}
           id={index}
-          checkedComplete={switchComplete}
+          checkComplete={switchComplete}
         />
       ))}
     </ul>

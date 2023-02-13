@@ -23,7 +23,7 @@ const InputForm = () => {
         value={todoName}
         onChange={(e) => setTodoName(e.target.value.toLocaleLowerCase())}
       />
-      <button>Create</button>
+      <button type='submit<s'>Create</button>
     </form>
   );
 };
