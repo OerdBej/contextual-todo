@@ -16,8 +16,6 @@ const List = () => {
     setTodo(newTodos);
   };
 
-  const handleOnEdit = () => {};
-
   return (
     <ul>
       {todo.map((todo, index) => (
