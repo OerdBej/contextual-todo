@@ -21,6 +21,7 @@ const InputForm = () => {
         required
         placeholder='Need to be done'
         value={todoName}
+        // getting the user input and setting up the state to hold the data
         onChange={(e) => setTodoName(e.target.value.toLocaleLowerCase())}
       />
       <button type='submit<s'>Create</button>

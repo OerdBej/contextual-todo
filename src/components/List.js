@@ -16,6 +16,16 @@ const List = () => {
     setTodo(newTodos);
   };
 
+  const handleEditTodos = (editvalue, id) => {
+    const newTodo = [...todo];
+    newTodo.forEach((todo, index) => {
+      if (index === id) {
+        todo.name = editvalue;
+      }
+    });
+    setTodo(newTodo);
+  };
+
   return (
     <ul>
       {todo.map((todo, index) => (
@@ -24,6 +34,7 @@ const List = () => {
           key={index}
           id={index}
           checkComplete={switchComplete}
+          handleEditTodos={handleEditTodos}
         />
       ))}
     </ul>

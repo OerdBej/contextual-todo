@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ListItem = ({ todo, id, checkComplete }) => {
+const ListItem = ({ todo, id, checkComplete, handleEditTodos }) => {
   const [onEdit, setOnEdit] = useState(false);
   const [editValue, setEditValue] = useState(todo.name);
 
@@ -10,13 +10,24 @@ const ListItem = ({ todo, id, checkComplete }) => {
 
   const handleSave = (id) => {
     setOnEdit(false);
+    if (editValue) {
+      handleEditTodos(editValue, id);
+    } else {
+      setEditValue(todo.name);
+    }
   };
 
   if (onEdit) {
     return (
       <li>
-        <input type='text' id='editValue' value={editValue} name='editValue' />
-        <button onClick={() => handleSave(id)}>Edit</button>
+        <input
+          type='text'
+          id='editValue'
+          value={editValue}
+          name='editValue'
+          onChange={(e) => setEditValue(e.target.value.toLocaleLowerCase())}
+        />
+        <button onClick={() => handleSave(id)}>Save</button>
       </li>
     );
   } else {
