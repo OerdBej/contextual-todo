@@ -15,14 +15,30 @@ const Footer = () => {
     setCheckAll(!checkAll);
   };
 
+  const deleteTodo = () => {
+    const newTodos = todos.filter((todo) => {
+      return todo.complete === false;
+    });
+    setTodos(newTodos);
+    setCheckAll(false);
+  };
+
   return (
     <div className='row'>
       <label htmlFor='all'>
-        <input type='checkbox' name='all' id='all' onClick={handleCheckAll} />
+        <input
+          type='checkbox'
+          name='all'
+          id='all'
+          onClick={handleCheckAll}
+          checked={checkAll}
+        />
         ALL
       </label>
-      <p>You have 0 to do</p>
-      <button id='delete'>Delete</button>
+      <p>You have {todos.length} to do</p>
+      <button id='delete' onClick={deleteTodo}>
+        Delete
+      </button>
     </div>
   );
 };
