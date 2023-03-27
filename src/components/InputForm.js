@@ -1,10 +1,11 @@
 import React from "react";
 import { DataContext } from "./DataProvider";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 
 const InputForm = () => {
   const [todo, setTodo] = useContext(DataContext);
   const [todoName, setTodoName] = useState("");
+  const todoInput = useRef();
 
   const addTodo = (e) => {
     e.preventDefault();

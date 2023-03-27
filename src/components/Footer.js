@@ -24,22 +24,28 @@ const Footer = () => {
   };
 
   return (
-    <div className='row'>
-      <label htmlFor='all'>
-        <input
-          type='checkbox'
-          name='all'
-          id='all'
-          onClick={handleCheckAll}
-          checked={checkAll}
-        />
-        ALL
-      </label>
-      <p>You have {todos.length} to do</p>
-      <button id='delete' onClick={deleteTodo}>
-        Delete
-      </button>
-    </div>
+    <>
+      {todos.length === 0 ? (
+        <h2>Congratulations you have nothing to do 😂</h2>
+      ) : (
+        <div className='row'>
+          <label htmlFor='all'>
+            <input
+              type='checkbox'
+              name='all'
+              id='all'
+              onClick={handleCheckAll}
+              checked={checkAll}
+            />
+            ALL
+          </label>
+          <p>You have {todos.length} to do</p>
+          <button id='delete' onClick={deleteTodo}>
+            Delete
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 
