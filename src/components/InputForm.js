@@ -11,6 +11,7 @@ const InputForm = () => {
     e.preventDefault();
     setTodo([...todo, { name: todoName, complete: false }]);
     setTodoName("");
+    todoInput.current.focus();
   };
 
   useEffect(() => {
