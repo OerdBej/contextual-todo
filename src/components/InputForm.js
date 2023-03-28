@@ -13,12 +13,16 @@ const InputForm = () => {
     setTodoName("");
   };
 
+  useEffect(() => {
+    todoInput.current.focus();
+  }, []);
   return (
     <form autoComplete='off' onSubmit={addTodo}>
       <input
         type='text'
         name='todo'
         id='todo'
+        ref={todoInput}
         required
         placeholder='Need to be done'
         value={todoName}
