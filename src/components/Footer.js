@@ -34,7 +34,7 @@ const Footer = () => {
               type='checkbox'
               name='all'
               id='all'
-              onClick={handleCheckAll}
+              onChange={handleCheckAll}
               checked={checkAll}
             />
             ALL
