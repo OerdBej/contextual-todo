@@ -15,11 +15,12 @@ const Footer = () => {
     setCheckAll(!checkAll);
   };
 
+  const newTodosComplete = () => {
+    return todos.filter((todo) => todo.complete === false);
+  };
+
   const deleteTodo = () => {
-    const newTodos = todos.filter((todo) => {
-      return todo.complete === false;
-    });
-    setTodos(newTodos);
+    setTodos(newTodosComplete());
     setCheckAll(false);
   };
 
@@ -39,7 +40,11 @@ const Footer = () => {
             />
             ALL
           </label>
-          <p>You have {todos.length} to do</p>
+          <p>
+            {/* this function will un display the length of the input todo */}
+            You have {todos.filter((todo) => todo.complete === false).length} to
+            do
+          </p>
           <button id='delete' onClick={deleteTodo}>
             Delete
           </button>
